@@ -23,21 +23,21 @@
 # include <math.h>
 # include "../minilibx-linux/mlx.h"
 
-# define ROTATE_LEFT	65361
-# define ROTATE_RIGHT	65363
-# define FORWARD_W_Z	119
-# define BACK_S_S		115
-# define RIGHT_D_D		100
-# define LEFT_A_Q		97
-# define BUFFER_SIZE	4096
+# define ROTATE_LEFT    65361
+# define ROTATE_RIGHT   65363
+# define FORWARD_W_Z    119
+# define BACK_S_S       115
+# define RIGHT_D_D      100
+# define LEFT_A_Q       97
+# define BUFFER_SIZE    4096
 
-typedef struct		s_sprxy
+typedef struct s_sprxy
 {
 	double			x;
 	double			y;
-}					t_sprxy;
+} t_sprxy;
 
-typedef struct		s_sprite
+typedef struct s_sprite
 {
 	int				nbspr;
 	int				*order;
@@ -55,9 +55,9 @@ typedef struct		s_sprite
 	int				drawendx;
 	int				spritewidth;
 	double			*zbuffer;
-}					t_sprite;
+} t_sprite;
 
-typedef struct		s_texture
+typedef struct s_texture
 {
 	int				texdir;
 	double			wallx;
@@ -65,9 +65,9 @@ typedef struct		s_texture
 	int				texy;
 	double			step;
 	double			texpos;
-}					t_texture;
+} t_texture;
 
-typedef struct		s_ray
+typedef struct s_ray
 {
 	double			posx;
 	double			posy;
@@ -97,9 +97,9 @@ typedef struct		s_ray
 	double			rotspeed;
 	int				x;
 	int				texture;
-}					t_ray;
+} t_ray;
 
-typedef struct		s_data
+typedef struct s_data
 {
 	void			*mlx_ptr;
 	void			*mlx_win;
@@ -119,9 +119,9 @@ typedef struct		s_data
 	int				height;
 	void			*img2;
 	int				*addr2;
-}					t_data;
+} t_data;
 
-typedef struct		s_recup
+typedef struct s_recup
 {
 	int				rx;
 	int				ry;
@@ -159,7 +159,7 @@ typedef struct		s_recup
 	t_texture		t;
 	t_sprite		s;
 	t_sprxy			*sxy;
-}					t_recup;
+} t_recup;
 
 int					ft_cub(char *str, t_recup *recup);
 void				ft_parsing(char *fichier, t_recup *recup);
@@ -173,8 +173,7 @@ void				ft_color_resolution(char **str, t_recup *recup);
 int					ft_atoi2(const char *str, t_recup *recup);
 int					ft_atoi3(const char *str, t_recup *recup);
 void				ft_texture(char *str, t_recup *recup);
-int					ft_path_texture(char *str, char **texture,
-						t_recup *recup, int j);
+int					ft_path_texture(char *str, char **texture, t_recup *recup, int j);
 void				ft_initialisation(t_recup *recup);
 int					ft_murs(t_recup *recup);
 int					ft_is_map(char *str, t_recup *recup);

@@ -72,9 +72,7 @@ int		ft_check_save(char *str)
 	i = 0;
 	while (str[i])
 		i++;
-	if (str[i - 1] == 'e' && str[i - 2] == 'v' && str[i - 3] == 'a' &&
-		str[i - 4] == 's' && str[i - 5] == '-' && str[i - 6] == '-'
-		&& ft_strlen(str) < 7)
+	if (str[i - 1] == 'e' && str[i - 2] == 'v' && str[i - 3] == 'a' && str[i - 4] == 's' && str[i - 5] == '-' && str[i - 6] == '-' && ft_strlen(str) < 7)
 		return (1);
 	else
 		return (0);

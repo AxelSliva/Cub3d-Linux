@@ -77,10 +77,7 @@ int		ft_is_map(char *str, t_recup *recup)
 	{
 		while (str[i] != '\0')
 		{
-			if (str[i] != ' ' && str[i] != '0' && str[i] != '1' \
-					&& str[i] != '2' && str[i] != 'N' && str[i] != 'S' \
-					&& str[i] != 'E' && str[i] != 'W' && str[i] != '\n'
-					&& str[i] != '\t')
+			if (str[i] != ' ' && str[i] != '0' && str[i] != '1' && str[i] != '2' && str[i] != 'N' && str[i] != 'S' && str[i] != 'E' && str[i] != 'W' && str[i] != '\n' && str[i] != '\t')
 			{
 				if (recup->insidemap == 1)
 					recup->wrongcharmap = 2;
@@ -102,9 +99,7 @@ void	ft_map(char *str, t_recup *recup)
 	i = 0;
 	if (ft_is_map(str, recup) == 1)
 	{
-		if (recup->f == -1 || recup->c == -1 || recup->no == NULL ||
-				recup->so == NULL || recup->we == NULL ||
-				recup->ea == NULL || recup->sp == NULL)
+		if (recup->f == -1 || recup->c == -1 || recup->no == NULL || recup->so == NULL || recup->we == NULL || recup->ea == NULL || recup->sp == NULL)
 			recup->erreur = 2;
 		if ((i = ft_strlen(str)) > ssizeline)
 			ssizeline = i;

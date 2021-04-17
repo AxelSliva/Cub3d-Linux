@@ -17,26 +17,22 @@ void	ft_stepsidedist(t_recup *recup)
 	if (recup->ray.raydirx < 0)
 	{
 		recup->ray.stepx = -1;
-		recup->ray.sidedistx = (recup->ray.posx - recup->ray.mapx) \
-							* recup->ray.deltadistx;
+		recup->ray.sidedistx = (recup->ray.posx - recup->ray.mapx) * recup->ray.deltadistx;
 	}
 	else
 	{
 		recup->ray.stepx = 1;
-		recup->ray.sidedistx = (recup->ray.mapx + 1.0 - recup->ray.posx) \
-							* recup->ray.deltadistx;
+		recup->ray.sidedistx = (recup->ray.mapx + 1.0 - recup->ray.posx) * recup->ray.deltadistx;
 	}
 	if (recup->ray.raydiry < 0)
 	{
 		recup->ray.stepy = -1;
-		recup->ray.sidedisty = (recup->ray.posy - recup->ray.mapy) \
-							* recup->ray.deltadisty;
+		recup->ray.sidedisty = (recup->ray.posy - recup->ray.mapy) * recup->ray.deltadisty;
 	}
 	else
 	{
 		recup->ray.stepy = 1;
-		recup->ray.sidedisty = (recup->ray.mapy + 1.0 - recup->ray.posy) \
-							* recup->ray.deltadisty;
+		recup->ray.sidedisty = (recup->ray.mapy + 1.0 - recup->ray.posy) * recup->ray.deltadisty;
 	}
 	ft_incrementray(recup);
 }
@@ -66,13 +62,9 @@ void	ft_incrementray(t_recup *recup)
 void	ft_drawstartend(t_recup *recup)
 {
 	if (recup->ray.side == 0)
-		recup->ray.perpwalldist = ((double)recup->ray.mapx - \
-				recup->ray.posx + (1 - (double)recup->ray.
-				stepx) / 2) / recup->ray.raydirx;
+		recup->ray.perpwalldist = ((double)recup->ray.mapx - recup->ray.posx + (1 - (double)recup->ray.stepx) / 2) / recup->ray.raydirx;
 	else
-		recup->ray.perpwalldist = ((double)recup->ray.mapy - \
-				recup->ray.posy + (1 - (double)recup->ray.
-				stepy) / 2) / recup->ray.raydiry;
+		recup->ray.perpwalldist = ((double)recup->ray.mapy - recup->ray.posy + (1 - (double)recup->ray.stepy) / 2) / recup->ray.raydiry;
 	recup->ray.lineheight = (int)(recup->ry / recup->ray.perpwalldist);
 	recup->ray.drawstart = -recup->ray.lineheight / 2 + recup->ry / 2;
 	if (recup->ray.drawstart < 0)

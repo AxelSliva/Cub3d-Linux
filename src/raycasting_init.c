@@ -36,10 +36,8 @@ void	ft_initialisation3(t_recup *recup)
 	recup->ray.hit = 0;
 	recup->ray.perpwalldist = 0;
 	recup->ray.camerax = 2 * recup->ray.x / (double)recup->rx - 1;
-	recup->ray.raydirx = recup->ray.dirx + recup->ray.planx * \
-						recup->ray.camerax;
-	recup->ray.raydiry = recup->ray.diry + recup->ray.plany * \
-						recup->ray.camerax;
+	recup->ray.raydirx = recup->ray.dirx + recup->ray.planx * recup->ray.camerax;
+	recup->ray.raydiry = recup->ray.diry + recup->ray.plany * recup->ray.camerax;
 	recup->ray.mapx = (int)recup->ray.posx;
 	recup->ray.mapy = (int)recup->ray.posy;
 	recup->ray.movespeed = 0.1;
@@ -58,11 +56,9 @@ void	ft_init_texture(t_recup *recup)
 	if (recup->ray.side == 1 && recup->ray.raydiry >= 0)
 		recup->t.texdir = 3;
 	if (recup->ray.side == 0)
-		recup->t.wallx = recup->ray.posy + recup->ray.perpwalldist \
-						* recup->ray.raydiry;
+		recup->t.wallx = recup->ray.posy + recup->ray.perpwalldist * recup->ray.raydiry;
 	else
-		recup->t.wallx = recup->ray.posx + recup->ray.perpwalldist \
-						* recup->ray.raydirx;
+		recup->t.wallx = recup->ray.posx + recup->ray.perpwalldist * recup->ray.raydirx;
 	recup->t.wallx -= floor((recup->t.wallx));
 }
 

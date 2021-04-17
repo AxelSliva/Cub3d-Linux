@@ -58,17 +58,13 @@ void	ft_init_more3(t_recup *recup)
 	else if (recup->ray.raydirx == 0)
 		recup->ray.deltadistx = 1;
 	else
-		recup->ray.deltadistx = sqrt(1 + (recup->ray.raydiry
-			* recup->ray.raydiry) / (recup->ray.raydirx *
-			recup->ray.raydirx));
+		recup->ray.deltadistx = sqrt(1 + (recup->ray.raydiry * recup->ray.raydiry) / (recup->ray.raydirx * recup->ray.raydirx));
 	if (recup->ray.raydirx == 0)
 		recup->ray.deltadisty = 0;
 	else if (recup->ray.raydiry == 0)
 		recup->ray.deltadisty = 1;
 	else
-		recup->ray.deltadisty = sqrt(1 + (recup->ray.raydirx *
-			recup->ray.raydirx) / (recup->ray.raydiry *
-			recup->ray.raydiry));
+		recup->ray.deltadisty = sqrt(1 + (recup->ray.raydirx * recup->ray.raydirx) / (recup->ray.raydiry * recup->ray.raydiry));
 }
 
 void	ft_atoi3_check(const char *str, t_recup *recup)
@@ -106,9 +102,7 @@ int		ft_lignevide(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] != '\t' && str[i] != ' ' && str[i] != '\0' &&
-				str[i] != '\n' && str[i] != '\r' && str[i] != '\v'
-				&& str[i] != '\f')
+		if (str[i] != '\t' && str[i] != ' ' && str[i] != '\0' && str[i] != '\n' && str[i] != '\r' && str[i] != '\v' && str[i] != '\f')
 			return (1);
 		i++;
 	}

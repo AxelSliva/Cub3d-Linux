@@ -26,8 +26,7 @@ int		ft_parsing_map(char *fichier, t_recup *recup)
 	while (ret != 0)
 	{
 		ret = get_next_line(fd, &str, recup);
-		if (recup->insidemap == 1 && ft_lignevide(str) == 0 &&
-				recup->count < recup->nblines)
+		if (recup->insidemap == 1 && ft_lignevide(str) == 0 && recup->count < recup->nblines)
 			recup->lignevide = 1;
 		if ((recup->insidemap = ft_is_map(str, recup)) == 1)
 		{
@@ -106,5 +105,6 @@ int		main(int argc, char **argv)
 		ft_cub(argv[1], &recup);
 	}
 	else
-		write(1, "Error\nArguments invalides\n", 30);
+		//write(1, "Error\nArguments invalides\n", 30);
+        printf("Error\nArguments invalides\n");
 }

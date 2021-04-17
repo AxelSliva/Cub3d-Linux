@@ -1,0 +1,26 @@
+
+ToDoList :
+
+Permettre au joueur de ce baisse
+Permettre au joueur de regarder vers le haut et vers le bas
+
+#######################################################################
+Pour comprendre :
+
+    \n      Retour a la ligne
+    \r      Retour chariot
+    \t      Tabulation horizontale
+    \v      Tabulation Verticale
+    \f      Ajout d'une page blanche
+    \b      Retour a la ligne
+    \a      Signal Sonore
+    \onn    Valeur octale egale a nn BASE 8
+    \xnnn   Valeur hexadecimale egale a nnn BASE 16
+    \"      Guillemet double
+    \'      Guillemet Simple
+    \0      Caractere nul
+    \?      Point d'interrogation
+    \\      Barre oblique inverse
+
+#######################################################################
+

@@ -19,10 +19,7 @@ int		ft_atoi2(const char *str, t_recup *recup)
 	sum = 0;
 	if (str[1] != ' ' || ft_charinstr((char *)str, ',') == 1)
 		recup->erreur = 2;
-	while (str[recup->i] == ' ' || str[recup->i] == '\t'
-			|| str[recup->i] == ',' || str[recup->i] == '\n'
-			|| str[recup->i] == '\r' || str[recup->i] == '\v'
-			|| str[recup->i] == '\f')
+	while (str[recup->i] == ' ' || str[recup->i] == '\t' || str[recup->i] == ',' || str[recup->i] == '\n' || str[recup->i] == '\r' || str[recup->i] == '\v' || str[recup->i] == '\f')
 		recup->i++;
 	if (str[recup->i] == '-' || str[recup->i] == '+')
 		recup->erreur = 2;
@@ -46,9 +43,7 @@ int		ft_atoi3(const char *str, t_recup *recup)
 	if (str[1] != ' ')
 		recup->erreur = 2;
 	ft_atoi3_check(str, recup);
-	while (str[recup->i] == ' ' || str[recup->i] == '\t' || str[recup->i]
-			== ',' || str[recup->i] == '\n' || str[recup->i] == '\r'
-			|| str[recup->i] == '\v' || str[recup->i] == '\f')
+	while (str[recup->i] == ' ' || str[recup->i] == '\t' || str[recup->i] == ',' || str[recup->i] == '\n' || str[recup->i] == '\r' || str[recup->i] == '\v' || str[recup->i] == '\f')
 	{
 		recup->i++;
 		verify = 0;
@@ -111,9 +106,7 @@ void	ft_texture(char *str, t_recup *recup)
 		ft_path_texture(str, &recup->ea, recup, 2);
 	else if (str[i] == 'S' && str[i + 1] != 'O')
 		ft_path_texture(str, &recup->sp, recup, 1);
-	else if (str[0] != 'N' && str[0] != 'S' && str[0] != 'W' && str[0] != 'E'
-			&& str[0] != 'R' && str[0] != 'F' && str[0] != 'C'
-			&& str[0] > 65 && str[0] < 122)
+	else if (str[0] != 'N' && str[0] != 'S' && str[0] != 'W' && str[0] != 'E' && str[0] != 'R' && str[0] != 'F' && str[0] != 'C' && str[0] > 65 && str[0] < 122)
 		recup->erreur = 2;
 	j++;
 }
@@ -124,12 +117,9 @@ void	ft_color_resolution(char **str, t_recup *recup)
 
 	i = 0;
 	recup->i = 1;
-	if (recup->sizeline > 0 && (recup->no == NULL || recup->so == NULL ||
-				recup->we == NULL || recup->ea == NULL || recup->sp == NULL))
+	if (recup->sizeline > 0 && (recup->no == NULL || recup->so == NULL || recup->we == NULL || recup->ea == NULL || recup->sp == NULL))
 		recup->erreur = 2;
-	if ((recup->no != NULL || recup->so != NULL || recup->we != NULL ||
-				recup->ea != NULL || recup->sp != NULL) && (recup->rx == 0
-				|| recup->ry == 0))
+	if ((recup->no != NULL || recup->so != NULL || recup->we != NULL || recup->ea != NULL || recup->sp != NULL) && (recup->rx == 0 || recup->ry == 0))
 		recup->erreur = 2;
 	if (*str[i] == 'R')
 	{
